@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-const TOKEN = process.env.BOT_TOKEN; // токен от BotFather
+const TOKEN = process.env.BOT_TOKEN || '8582351306:AAGqzbj26yYNkVGzovhn8xRt1rLbm4t7hVM'; // токен от BotFather
 const URL = 'https://cookquest.onrender.com'; // замените на свой Render-домен
 const PORT = process.env.PORT || 3000;
 
