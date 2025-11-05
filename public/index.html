@@ -7,16 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>CookQuest</h1>
-    <p>Готовь вкусно, играй весело!</p>
-    <button id="startBtn">🍲 Начать готовку</button>
-    <div id="gameArea" class="hidden">
-      <p id="stepText"></p>
-      <button id="nextStepBtn">Следующий шаг</button>
+  <!-- Splash экран -->
+  <div id="splashScreen" class="splash">
+    <div class="cauldron"></div>
+    <div class="fire">
+      <div class="flame flame1"></div>
+      <div class="flame flame2"></div>
+      <div class="flame flame3"></div>
     </div>
   </div>
-  
+
+  <!-- Основной экран игры -->
+  <div id="gameScreen" class="hidden">
+    <h2 id="stepText">Добро пожаловать!</h2>
+    <button id="nextStepBtn">Следующий шаг</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

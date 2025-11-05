@@ -1,36 +1,90 @@
 body {
-  font-family: sans-serif;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fff3e0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #fff8e1;
-}
-
-.container {
-  text-align: center;
-  background-color: #fff3e0;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-button {
-  padding: 12px 24px;
-  font-size: 18px;
-  background-color: #ff9800;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-  background-color: #fb8c00;
 }
 
 .hidden {
   display: none;
+}
+
+/* Сплэш экран */
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Котел */
+.cauldron {
+  width: 150px;
+  height: 100px;
+  background: black;
+  border-radius: 80px 80px 30px 30px;
+  position: relative;
+  box-shadow: inset -5px -5px 10px #222;
+  margin-bottom: 20px;
+}
+
+/* Дрова и огонь */
+.fire {
+  position: relative;
+  width: 60px;
+  height: 40px;
+  margin-top: -10px;
+}
+
+/* Пламя */
+.flame {
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 30px;
+  background: orange;
+  border-radius: 50% 50% 0 0;
+  animation: flicker 0.5s infinite alternate;
+}
+
+.flame1 { left: 0; animation-delay: 0s; }
+.flame2 { left: 20px; animation-delay: 0.2s; background: #ff6600; }
+.flame3 { left: 40px; animation-delay: 0.4s; background: #ff3300; }
+
+/* Анимация пламени */
+@keyframes flicker {
+  0% { transform: scaleY(1) translateY(0); opacity: 1; }
+  50% { transform: scaleY(1.3) translateY(-5px); opacity: 0.8; }
+  100% { transform: scaleY(1) translateY(0); opacity: 1; }
+}
+
+/* Основной экран */
+#gameScreen {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Анимация шагов */
+.step-active {
+  transform: scale(1.1);
+  color: #ff5722;
+  transition: all 0.5s ease;
 }

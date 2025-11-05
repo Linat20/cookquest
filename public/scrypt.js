@@ -1,30 +1,43 @@
-const startBtn = document.getElementById('startBtn');
-const gameArea = document.getElementById('gameArea');
-const stepText = document.getElementById('stepText');
-const nextStepBtn = document.getElementById('nextStepBtn');
+const splashScreen = document.getElementById('splashScreen');
+const gameScreen = document.getElementById('gameScreen');
 
 const steps = [
-  "Шаг 1: Возьми миску.",
-  "Шаг 2: Добавь ингредиенты.",
-  "Шаг 3: Перемешай всё тщательно.",
-  "Шаг 4: Поставь на плиту и готовь 5 минут.",
-  "Шаг 5: Блюдо готово! Приятного аппетита 🍽️"
+  { text: "Шаг 1: Возьми миску", duration: 3000 },
+  { text: "Шаг 2: Добавь ингредиенты", duration: 4000 },
+  { text: "Шаг 3: Перемешай всё тщательно", duration: 5000 },
+  { text: "Шаг 4: Поставь на плиту и готовь", duration: 6000 },
+  { text: "Шаг 5: Блюдо готово! 🎉", duration: 0 }
 ];
 
 let currentStep = 0;
+const stepText = document.getElementById("stepText");
+const nextStepBtn = document.getElementById("nextStepBtn");
 
-startBtn.addEventListener('click', () => {
-  startBtn.classList.add('hidden');
-  gameArea.classList.remove('hidden');
-  stepText.textContent = steps[currentStep];
-});
+// Скрываем Splash и показываем игру через 2 секунды
+setTimeout(() => {
+  splashScreen.classList.add('hidden');
+  gameScreen.classList.remove('hidden');
+  showStep(steps[currentStep]);
+}, 2000);
 
-nextStepBtn.addEventListener('click', () => {
+function showStep(step) {
+  stepText.textContent = step.text;
+  stepText.classList.add("step-active");
+  setTimeout(() => stepText.classList.remove("step-active"), 500);
+
+  if (step.duration > 0) {
+    nextStepBtn.disabled = true;
+    setTimeout(() => {
+      nextStepBtn.disabled = false;
+    }, step.duration);
+  } else {
+    nextStepBtn.disabled = true;
+  }
+}
+
+nextStepBtn.addEventListener("click", () => {
   currentStep++;
   if (currentStep < steps.length) {
-    stepText.textContent = steps[currentStep];
-  } else {
-    stepText.textContent = "🎉 Ты завершил готовку!";
-    nextStepBtn.disabled = true;
+    showStep(steps[currentStep]);
   }
 });
