@@ -18,73 +18,75 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/* Котел */
-.cauldron {
-  width: 150px;
-  height: 100px;
-  background: black;
-  border-radius: 80px 80px 30px 30px;
-  position: relative;
-  box-shadow: inset -5px -5px 10px #222;
-  margin-bottom: 20px;
-}
-
-/* Дрова и огонь */
-.fire {
-  position: relative;
-  width: 60px;
-  height: 40px;
-  margin-top: -10px;
-}
-
-/* Пламя */
-.flame {
-  position: absolute;
-  bottom: 0;
-  width: 15px;
-  height: 30px;
-  background: orange;
-  border-radius: 50% 50% 0 0;
-  animation: flicker 0.5s infinite alternate;
-}
-
-.flame1 { left: 0; animation-delay: 0s; }
-.flame2 { left: 20px; animation-delay: 0.2s; background: #ff6600; }
-.flame3 { left: 40px; animation-delay: 0.4s; background: #ff3300; }
-
-/* Анимация пламени */
-@keyframes flicker {
-  0% { transform: scaleY(1) translateY(0); opacity: 1; }
-  50% { transform: scaleY(1.3) translateY(-5px); opacity: 0.8; }
-  100% { transform: scaleY(1) translateY(0); opacity: 1; }
-}
-
-/* Основной экран */
-#gameScreen {
+  height: 100vh;
+  background: radial-gradient(circle at center, #1b1b1b, #000);
+  color: #fff;
   text-align: center;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  background-color: #ff9800;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
+.cauldron-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.cauldron {
+  width: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* 🔥 Огонь */
+.fire {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at center, orange, red, transparent);
+  border-radius: 50%;
+  animation: flicker 0.2s infinite;
+  filter: blur(4px);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* 💨 Дым */
+.smoke {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: rgba(200,200,200,0.3);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: smokeRise 3s infinite ease-in-out;
+  filter: blur(6px);
+}
+
+@keyframes smokeRise {
+  0% { transform: translate(-50%, 0) scale(0.8); opacity: 0.5; }
+  50% { transform: translate(-50%, -30px) scale(1.2); opacity: 0.3; }
+  100% { transform: translate(-50%, -60px) scale(1.4); opacity: 0; }
+}
+
+.loading-text {
   margin-top: 20px;
+  font-size: 1.5rem;
+  color: #ffb74d;
+  animation: pulse 1.5s infinite;
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Анимация шагов */
-.step-active {
-  transform: scale(1.1);
-  color: #ff5722;
-  transition: all 0.5s ease;
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
