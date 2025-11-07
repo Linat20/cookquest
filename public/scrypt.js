@@ -27,4 +27,10 @@ function showNextPhrase() {
 }
 
 // Меняем текст каждые 2 секунды
-setInterval(showNextPhrase, 3000);
+setInterval(showNextPhrase, 2500);
+
+// Переход через 6 секунд
+setTimeout(() => {
+  document.getElementById("splashScreen").classList.add("hidden");
+  document.getElementById("gameScreen").classList.remove("hidden");
+}, 6000);
