@@ -160,7 +160,6 @@ html,body {
   margin-top: 20px;
   font-size: 1.5rem;
   color: #ffb74d;
-  opacity: 0; /* по умолчанию невидим */
   transition: opacity 1s ease-in-out; /* плавное появление и исчезновение */
 }
 
