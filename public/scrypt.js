@@ -23,8 +23,8 @@ function showNextPhrase() {
     index = (index + 1) % phrases.length;
     loadingText.textContent = phrases[index];
     loadingText.style.opacity = 1;
-  }, 500); // 0.5 секунды для плавного исчезновения
+  }, 1000); // 0.5 секунды для плавного исчезновения
 }
 
 // Меняем текст каждые 2 секунды
-setInterval(showNextPhrase, 2000);
+setInterval(showNextPhrase, 3000);
