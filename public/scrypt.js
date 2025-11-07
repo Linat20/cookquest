@@ -10,11 +10,21 @@ const phrases = [
 
 let index = 0;
 
-// Сразу показываем первую фразу
+// Инициализация текста
 loadingText.textContent = phrases[index];
+loadingText.style.opacity = 1; // текст виден сразу
 
-// Меняем фразы каждые 2 секунды
-setInterval(() => {
-  index = (index + 1) % phrases.length;
-  loadingText.textContent = phrases[index];
-}, 2000);
+function showNextPhrase() {
+  // fade-out
+  loadingText.style.opacity = 0;
+
+  // через 500мс меняем текст и делаем fade-in
+  setTimeout(() => {
+    index = (index + 1) % phrases.length;
+    loadingText.textContent = phrases[index];
+    loadingText.style.opacity = 1;
+  }, 1000); // 1 секунды для плавного исчезновения
+}
+
+// Меняем текст каждые 2 секунды
+setInterval(showNextPhrase, 3000);
