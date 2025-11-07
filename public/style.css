@@ -160,6 +160,7 @@ html,body {
   margin-top: 20px;
   font-size: 1.5rem;
   color: #ffb74d;
+  transition: opacity 1s ease-in-out; 
 }
 
 @keyframes pulse {
