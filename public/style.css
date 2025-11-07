@@ -47,66 +47,55 @@ html,body {
 
 .fire {
   position: absolute;
-  bottom: -20px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px;
-  height: 90px;
+  width: 120px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
 }
 
 .flame {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   width: 40px;
-  height: 60px;
+  height: 80px;
   background: radial-gradient(circle at 50% 80%, #ff9800, #ff5722 70%, transparent 100%);
-  border-radius: 50% 50% 15% 15%;
-  animation: flameMove 1s infinite ease-in-out;
+  border-radius: 50% 50% 25% 25%;
+  animation: flameDance 1s infinite ease-in-out;
   filter: blur(1px);
+  transform-origin: bottom center;
 }
 
-.flame::before,
-.flame::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 25px;
-  height: 40px;
-  background: radial-gradient(circle at 50% 80%, #ffd54f, #ff9800 70%, transparent 100%);
-  border-radius: 50% 50% 15% 15%;
-  animation: flicker 0.5s infinite alternate;
-  opacity: 0.8;
+.flame:nth-child(2) {
+  width: 50px;
+  height: 90px;
+  background: radial-gradient(circle at 50% 80%, #ffa726, #f44336 70%, transparent 100%);
+  animation-delay: 0.2s;
 }
 
-.flame::after {
-  width: 15px;
-  height: 25px;
-  background: radial-gradient(circle at 50% 80%, #fff176, #ffb74d 60%, transparent 100%);
-  animation-delay: 0.3s;
+.flame:nth-child(3) {
+  width: 35px;
+  height: 70px;
+  background: radial-gradient(circle at 50% 80%, #ffc107, #ff7043 70%, transparent 100%);
+  animation-delay: 0.4s;
 }
 
-/* 🔥 Анимации */
-@keyframes flameMove {
+/* 🔥 Анимация пламени */
+@keyframes flameDance {
   0%, 100% {
-    transform: translateX(-50%) scaleY(1);
+    transform: scaleY(1) rotate(0deg);
+    opacity: 0.9;
   }
   50% {
-    transform: translateX(-50%) scaleY(1.1);
+    transform: scaleY(1.2) rotate(2deg);
+    opacity: 0.8;
   }
-}
-
-@keyframes flicker {
-  0% {
-    opacity: 0.9;
-    transform: translateX(-50%) scale(1);
-  }
-  100% {
+  75% {
+    transform: scaleY(1.1) rotate(-2deg);
     opacity: 0.7;
-    transform: translateX(-50%) scale(1.1);
   }
 }
 
