@@ -5,14 +5,20 @@ html,body {
   height: 100%;
   font-family: 'Arial', sans-serif;
   background: #fff3e0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
-
+/* Каждый экран занимает весь viewport */
+#splashScreen,
+#gameScreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Сплэш экран */
@@ -102,7 +108,7 @@ html,body {
 /* 💨 Пар */
 .steam {
   position: absolute;
-  top: -60px; /* чуть выше котла */
+  top: -70px; /* чуть выше котла */
   left: 50%;
   transform: translateX(-50%);
   width: 100px;  /* чуть шире */
@@ -168,6 +174,8 @@ html,body {
     opacity: 0;
   }
 }
+
+
 
 
 
