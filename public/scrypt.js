@@ -10,18 +10,11 @@ const phrases = [
 
 let index = 0;
 
-function showNextPhrase() {
-  loadingText.style.opacity = 0; // fade-out
+// Сразу показываем первую фразу
+loadingText.textContent = phrases[index];
 
-  setTimeout(() => {
-    index = (index + 1) % phrases.length;
-    loadingText.textContent = phrases[index];
-    loadingText.style.opacity = 1; // fade-in
-  }, 1000); // совпадает с duration transition в CSS
-}
-
-// Текст сразу виден
-loadingText.style.opacity = 1;
-
-// Цикл смены фраз каждые 3 секунды
-setInterval(showNextPhrase, 3000);
+// Меняем фразы каждые 2 секунды
+setInterval(() => {
+  index = (index + 1) % phrases.length;
+  loadingText.textContent = phrases[index];
+}, 2000);
