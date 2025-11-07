@@ -102,11 +102,11 @@ html,body {
 /* 💨 Пар */
 .steam {
   position: absolute;
-  top: -30px; /* чуть выше котла */
+  top: -60px; /* чуть выше котла */
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 80px;
+  width: 100px;  /* чуть шире */
+  height: 100px;
   pointer-events: none;
   overflow: visible;
 }
@@ -115,41 +115,56 @@ html,body {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.25);
+  width: 14px;   /* чуть больше */
+  height: 14px;
+  background: rgba(255, 255, 255, 0.4); /* более яркий и чёткий */
   border-radius: 50%;
   transform: translateX(-50%) scale(0.8);
   animation: steamRise 3s infinite ease-in-out;
-  filter: blur(2px);
+  filter: blur(1.5px); /* немного меньше размытие, чтобы пузырёк чётче */
 }
 
+/* Дополнительные пузырьки */
 .bubble:nth-child(2) {
-  animation-delay: 1s;
-  left: 40%;
-  width: 8px;
-  height: 8px;
+  animation-delay: 0.5s;
+  left: 30%;
+  width: 12px;
+  height: 12px;
 }
 
 .bubble:nth-child(3) {
+  animation-delay: 1s;
+  left: 70%;
+  width: 16px;
+  height: 16px;
+}
+
+.bubble:nth-child(4) {
+  animation-delay: 1.5s;
+  left: 40%;
+  width: 10px;
+  height: 10px;
+}
+
+.bubble:nth-child(5) {
   animation-delay: 2s;
   left: 60%;
   width: 12px;
   height: 12px;
 }
 
-/* 🌀 Анимация пара */
+/* Анимация пузырьков */
 @keyframes steamRise {
   0% {
     transform: translateY(0) scale(0.8);
-    opacity: 0.5;
+    opacity: 0.6;
   }
   50% {
-    transform: translateY(-25px) scale(1.2);
+    transform: translateY(-30px) scale(1.2);
     opacity: 0.3;
   }
   100% {
-    transform: translateY(-60px) scale(1.4);
+    transform: translateY(-70px) scale(1.4);
     opacity: 0;
   }
 }
