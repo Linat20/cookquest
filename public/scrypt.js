@@ -1,7 +1,5 @@
-window.Telegram.WebApp.ready(); // сообщает Telegram, что Web App загружен
-
-// Теперь можно запускать JS
 const loadingText = document.getElementById("loadingText");
+
 const phrases = [
   "Готовим ингредиенты...",
   "Добавляем специи...",
@@ -9,15 +7,14 @@ const phrases = [
   "Нагреваем котел...",
   "Подбрасываем магию..."
 ];
+
 let index = 0;
 
-function showNextPhrase() {
-  loadingText.style.opacity = 0;
-  setTimeout(() => {
-    index = (index + 1) % phrases.length;
-    loadingText.textContent = phrases[index];
-    loadingText.style.opacity = 1;
-  }, 500);
-}
+// Сразу показываем первую фразу
+loadingText.textContent = phrases[index];
 
-setInterval(showNextPhrase, 2000);
+// Меняем текст каждые 2 секунды
+setInterval(() => {
+  index = (index + 1) % phrases.length;
+  loadingText.textContent = phrases[index];
+}, 2000);
