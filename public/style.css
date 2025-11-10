@@ -27,6 +27,7 @@ html,body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   background: radial-gradient(circle at center, #1b1b1b, #000);
@@ -37,7 +38,12 @@ html,body {
 .cauldron-container {
   position: relative;
   width: 200px;
-  height: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
 }
 
 .cauldron {
@@ -51,58 +57,107 @@ html,body {
   50% { transform: translateY(-5px); }
 }
 
-.fire {
+/* 🌲 Дрова */
+.firewood {
   position: absolute;
-  bottom: -5px;
+  bottom: -35px; /* чуть ниже огня */
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
+  z-index: 1; /* ниже огня */
+}
+
+.firewood img {
+  width: 90px; /* можно подогнать под котёл */
+  height: auto;
+  display: block;
+}
+
+.fire {
+  position: absolute;
+  bottom: -10px;          /* чуть ниже котла */
+  width: 60px;
   height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 2px;
+  transform-origin: center bottom;
+  animation: flicker 0.5s ease-in-out infinite alternate;
 }
 
 .flame {
-  position: relative;
-  width: 30px;
-  height: 60px;
-  background: radial-gradient(circle at 50% 80%, #ff9800, #ff5722 70%, transparent 100%);
-  border-radius: 50% 50% 25% 25%;
-  animation: flameDance 1s infinite ease-in-out;
-  filter: blur(1px);
-  transform-origin: bottom center;
+  position: absolute;
+  bottom: 0;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  transform: rotate(-45deg) scale(1.5, 1.5);
+  filter: blur(2px);
 }
 
-.flame:nth-child(2) {
-  width: 30px;
+/* Цветовые слои пламени */
+.red {
+  left: 5px;
+  width: 50px;
   height: 50px;
-  background: radial-gradient(circle at 50% 80%, #ffa726, #f44336 70%, transparent 100%);
-  animation-delay: 0.2s;
+  background: orangered;
+  box-shadow: 0 0 8px 4px orangered;
 }
 
-.flame:nth-child(3) {
+.orange {
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background: orange;
+  box-shadow: 0 0 8px 4px orange;
+}
+
+.yellow {
+  left: 15px;
   width: 30px;
-  height: 60px;
-  background: radial-gradient(circle at 50% 80%, #ffc107, #ff7043 70%, transparent 100%);
-  animation-delay: 0.4s;
+  height: 30px;
+  background: gold;
+  box-shadow: 0 0 8px 4px gold;
+}
+
+.white {
+  left: 20px;
+  bottom: -2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  box-shadow: 0 0 6px 3px white;
+}
+
+/* Центральное ядро */
+.circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.blue {
+  left: 25px;
+  bottom: -20px;
+  width: 10px;
+  height: 10px;
+  background: slateblue;
+  box-shadow: 0 0 12px 6px slateblue;
+}
+
+/* Анимация мерцания */
+@keyframes flicker {
+  0%   { transform: scaleY(1) rotate(-1deg); opacity: 0.9; }
+  20%  { transform: scaleY(1.05) rotate(1deg); opacity: 0.8; }
+  40%  { transform: scaleY(0.95) rotate(-1deg); opacity: 0.85; }
+  60%  { transform: scaleY(1.1) rotate(2deg); opacity: 0.9; }
+  80%  { transform: scaleY(0.9) rotate(-2deg); opacity: 0.8; }
+  100% { transform: scaleY(1) rotate(1deg); opacity: 0.9; }
 }
 
 /* 🔥 Анимация пламени */
-@keyframes flameDance {
-  0%, 100% {
-    transform: scaleY(1) rotate(0deg);
-    opacity: 0.9;
-  }
-  50% {
-    transform: scaleY(1.2) rotate(2deg);
-    opacity: 0.8;
-  }
-  75% {
-    transform: scaleY(1.1) rotate(-2deg);
-    opacity: 0.7;
-  }
+@keyframes flicker {
+  0%  {transform: rotate(-1deg);}
+  20% {transform: rotate(1deg);}
+  40% {transform: rotate(-1deg);}
+  60% {transform: rotate(1deg) scaleY(1.04);}
+  80% {transform: rotate(-2deg) scaleY(0.92);}
+  100% {transform: rotate(1deg);}
 }
 
 /* 💨 Пар */
