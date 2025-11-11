@@ -62,7 +62,7 @@ html,body {
 /* 🌲 Дрова */
 .firewood {
   position: absolute;
-  bottom: -55px; /* чуть ниже огня */
+  bottom: -35px; /* чуть ниже огня */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1; /* ниже огня */
