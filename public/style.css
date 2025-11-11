@@ -256,7 +256,7 @@ html,body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('img/bg_kitchen.jpg') center/cover no-repeat;
+  background: url('img/bg_kitchen.png') center/cover no-repeat;
   color: #4e342e;
   font-family: 'Comic Neue', sans-serif;
   display: flex;
