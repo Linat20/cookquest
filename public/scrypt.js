@@ -23,14 +23,14 @@ function showNextPhrase() {
     index = (index + 1) % phrases.length;
     loadingText.textContent = phrases[index];
     loadingText.style.opacity = 1;
-  }, 1000); // 0.5 секунды для плавного исчезновения
+  }, 800); // 0.5 секунды для плавного исчезновения
 }
 
 // Меняем текст каждые 2 секунды
-setInterval(showNextPhrase, 2500);
+setInterval(showNextPhrase, 2300);
 
 // Переход через 6 секунд
 setTimeout(() => {
   document.getElementById("splashScreen").classList.add("hidden");
   document.getElementById("gameScreen").classList.remove("hidden");
-}, 10000);
+}, 11000);
