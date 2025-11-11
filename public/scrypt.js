@@ -33,4 +33,4 @@ setInterval(showNextPhrase, 2300);
 setTimeout(() => {
   document.getElementById("splashScreen").classList.add("hidden");
   document.getElementById("mainMenu").classList.remove("hidden");
-}, 100); //тут было 12 секунд
+}, 12000); //тут было 12 секунд
