@@ -33,4 +33,4 @@ setInterval(showNextPhrase, 2300);
 setTimeout(() => {
   document.getElementById("splashScreen").classList.add("hidden");
   document.getElementById("gameScreen").classList.remove("hidden");
-}, 11000);
+}, 12000);
