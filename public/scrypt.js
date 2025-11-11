@@ -32,5 +32,5 @@ setInterval(showNextPhrase, 2300);
 // Переход через 6 секунд
 setTimeout(() => {
   document.getElementById("splashScreen").classList.add("hidden");
-  document.getElementById("gameScreen").classList.remove("hidden");
+  document.getElementById("mainMenu").classList.remove("hidden");
 }, 12000);

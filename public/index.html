@@ -31,18 +31,31 @@
   <p class="loading-text" id="loadingText">Готовим ингредиенты...</p>
 </div>
 
-  <!-- Основной экран игры -->
- <!-- Главный экран игры -->
+ <!-- Главное меню -->
 <div id="mainMenu" class="hidden main-menu">
-  <h1 class="title">CookQuest</h1>
-  <div class="menu-buttons">
-    <button class="menu-btn" id="cookBtn">🍳 Приготовить блюдо</button>
-    <button class="menu-btn" id="learnBtn">🎓 Обучение</button>
-    <button class="menu-btn" id="questBtn">🎯 Квест дня</button>
+
+  <!-- Верхняя панель -->
+  <div class="top-bar">
+    <div class="level-bar">
+      <span class="level-text">Lv <span id="playerLevel">1</span></span>
+      <div class="xp-bar">
+        <div class="xp-fill" id="xpFill" style="width: 35%;"></div>
+      </div>
+    </div>
+    <div class="top-buttons">
+      <button class="icon-btn" id="profileBtn" title="Профиль">👨‍🍳</button>
+      <button class="icon-btn" id="settingsBtn" title="Настройки">⚙️</button>
+    </div>
   </div>
-  <div class="player-info">
-    <p>👨‍🍳 Уровень: <span id="playerLevel">1</span></p>
-    <p>⭐ Опыт: <span id="playerXP">0 XP</span></p>
+
+  <!-- Логотип и кнопки меню -->
+  <div class="menu-center">
+    <h1 class="title">CookQuest</h1>
+    <div class="menu-buttons">
+      <button class="menu-btn" id="cookBtn">🍳 Приготовить блюдо</button>
+      <button class="menu-btn" id="learnBtn">🎓 Обучение</button>
+      <button class="menu-btn" id="questBtn">🎯 Квест дня</button>
+    </div>
   </div>
 </div>
 
