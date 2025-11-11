@@ -37,8 +37,8 @@ html,body {
 
 .cauldron-container {
   position: relative;
-  width: 200px;
-  height: 250px;
+  width: 180px;
+  height: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,8 +48,10 @@ html,body {
 
 .cauldron {
   width: 100%;
+  height: auto;
   animation: float 3s ease-in-out infinite;
   margin-bottom: 40px;
+  z-index: 3;
 }
 
 @keyframes float {
@@ -60,7 +62,7 @@ html,body {
 /* 🌲 Дрова */
 .firewood {
   position: absolute;
-  bottom: -35px; /* чуть ниже огня */
+  bottom: -55px; /* чуть ниже огня */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1; /* ниже огня */
@@ -74,11 +76,12 @@ html,body {
 
 .fire {
   position: absolute;
-  bottom: -10px;          /* чуть ниже котла */
+  bottom: -20px;          /* чуть ниже котла */
   width: 60px;
   height: 60px;
   transform-origin: center bottom;
   animation: flicker 0.5s ease-in-out infinite alternate;
+  z-index: 2;
 }
 
 .flame {
