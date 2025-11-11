@@ -298,7 +298,7 @@ html,body {
 
 .xp-fill {
   height: 100%;
-  background: linear-gradient(90deg, #ff9800, #ffb74d);
+  background: linear-gradient(90deg, #d33a03, #fd0101);
   border-radius: 5px;
   transition: width 0.5s ease;
 }
