@@ -76,7 +76,7 @@ html,body {
 
 .fire {
   position: absolute;
-  bottom: 30px;          /* чуть ниже котла */
+  bottom: 10px;          /* чуть ниже котла */
   width: 60px;
   height: 60px;
   transform-origin: center bottom;
