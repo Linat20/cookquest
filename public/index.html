@@ -32,10 +32,19 @@
 </div>
 
   <!-- Основной экран игры -->
-  <div id="gameScreen" class="hidden">
-    <h2 id="stepText">Добро пожаловать!</h2>
-    <button id="nextStepBtn">Ты, Илназ, сосал, если это прочитал!</button>
+ <!-- Главный экран игры -->
+<div id="mainMenu" class="hidden main-menu">
+  <h1 class="title">CookQuest</h1>
+  <div class="menu-buttons">
+    <button class="menu-btn" id="cookBtn">🍳 Приготовить блюдо</button>
+    <button class="menu-btn" id="learnBtn">🎓 Обучение</button>
+    <button class="menu-btn" id="questBtn">🎯 Квест дня</button>
   </div>
+  <div class="player-info">
+    <p>👨‍🍳 Уровень: <span id="playerLevel">1</span></p>
+    <p>⭐ Опыт: <span id="playerXP">0 XP</span></p>
+  </div>
+</div>
 
   <script src="scrypt.js"></script>
 </body>
