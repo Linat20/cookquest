@@ -33,7 +33,7 @@ setInterval(showNextPhrase, 2300);
 setTimeout(() => {
   document.getElementById("splashScreen").classList.add("hidden");
   document.getElementById("mainMenu").classList.remove("hidden");
-}, 12000); //тут было 12 секунд
+}, 120); //тут было 12 секунд
 
 
 function onTelegramAuth(user) {
