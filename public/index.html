@@ -35,24 +35,34 @@
 <div id="mainMenu" class="hidden main-menu">
 
     <!-- Верхняя панель -->
-  <div class="top-bar">
-
-  <!-- Левый угол: профиль -->
-  <button class="icon-btn profile-big" id="profileBtn" title="Профиль">👨‍🍳</button>
-
-  <!-- Центр: XP -->
-  <div class="xp-center">
-    <span class="level-text">Lv <span id="playerLevel">1</span></span>
-    <div class="xp-bar">
-      <div class="xp-fill" id="xpFill" style="width: 10%;"></div>
-    </div>
-    <span class="xp-numbers" id="xpNumbers">10 / 100 XP</span>
+ <div class="top-bar">
+  <!-- Левый блок: профиль -->
+  <div class="left">
+    <img src="default-avatar.png" class="profile-big" id="profileImg">
   </div>
 
-  <!-- Правый угол: настройки -->
-  <button class="icon-btn settings-fix" id="settingsBtn" title="Настройки">⚙️</button>
+  <!-- Центральный блок: XP -->
+  <div class="xp-center">
+    <div class="xp-numbers">1200 XP</div>
+    <div class="xp-bar">
+      <div class="xp-fill" style="width: 60%;"></div>
+    </div>
+  </div>
 
+  <!-- Правый блок: кнопка настроек -->
+  <div class="right">
+    <button class="settings-fix">⚙️</button>
+  </div>
 </div>
+
+<!-- Telegram Login Widget -->
+<script async src="https://telegram.org/js/telegram-widget.js?7"
+        data-telegram-login="your_bot_username"
+        data-size="large"
+        data-userpic="true"
+        data-request-access="write"
+        data-onauth="onTelegramAuth(user)">
+</script>
 
   <!-- Логотип и кнопки меню -->
   <div class="menu-center">

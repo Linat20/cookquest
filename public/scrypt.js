@@ -34,3 +34,14 @@ setTimeout(() => {
   document.getElementById("splashScreen").classList.add("hidden");
   document.getElementById("mainMenu").classList.remove("hidden");
 }, 12000); //тут было 12 секунд
+
+
+function onTelegramAuth(user) {
+  const profileImg = document.getElementById('profileImg');
+
+  if (user.photo_url) {
+    profileImg.src = user.photo_url; // аватарка Telegram
+  } else {
+    profileImg.src = 'default-avatar.png'; // fallback
+  }
+}
