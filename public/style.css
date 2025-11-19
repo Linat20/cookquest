@@ -370,3 +370,45 @@ html,body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Топ бар — НИЧЕГО не ломает */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Увеличенный профиль */
+.profile-big {
+  width: 55px;
+  height: 55px;
+  font-size: 1.9rem;
+}
+
+/* Центровка XP-блока */
+.xp-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Цифры XP */
+.xp-numbers {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Настройки — не выходят за экран */
+.settings-fix {
+  margin-right: 0;
+}

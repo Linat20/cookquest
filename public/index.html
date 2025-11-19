@@ -34,19 +34,25 @@
  <!-- Главное меню -->
 <div id="mainMenu" class="hidden main-menu">
 
-  <!-- Верхняя панель -->
+    <!-- Верхняя панель -->
   <div class="top-bar">
-    <div class="level-bar">
-      <span class="level-text">Lv <span id="playerLevel">1</span></span>
-      <div class="xp-bar">
-        <div class="xp-fill" id="xpFill" style="width: 35%;"></div>
-      </div>
+
+  <!-- Левый угол: профиль -->
+  <button class="icon-btn profile-big" id="profileBtn" title="Профиль">👨‍🍳</button>
+
+  <!-- Центр: XP -->
+  <div class="xp-center">
+    <span class="level-text">Lv <span id="playerLevel">1</span></span>
+    <div class="xp-bar">
+      <div class="xp-fill" id="xpFill" style="width: 10%;"></div>
     </div>
-    <div class="top-buttons">
-      <button class="icon-btn" id="profileBtn" title="Профиль">👨‍🍳</button>
-      <button class="icon-btn" id="settingsBtn" title="Настройки">⚙️</button>
-    </div>
+    <span class="xp-numbers" id="xpNumbers">10 / 100 XP</span>
   </div>
+
+  <!-- Правый угол: настройки -->
+  <button class="icon-btn settings-fix" id="settingsBtn" title="Настройки">⚙️</button>
+
+</div>
 
   <!-- Логотип и кнопки меню -->
   <div class="menu-center">
