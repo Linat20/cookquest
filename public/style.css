@@ -371,44 +371,50 @@ html,body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Топ бар — НИЧЕГО не ломает */
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 15px 20px;
-  position: relative;
-  z-index: 10;
+  box-sizing: border-box; /* учитываем padding в ширине */
 }
 
-/* Увеличенный профиль */
+.left, .right {
+  flex: 0 0 auto; /* фиксированные блоки */
+}
+
+.xp-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  /* чтобы блок не раздвигал кнопки */
+  max-width: calc(100% - 55px - 55px - 40px); 
+  /* 55px слева и справа + 40px padding (20+20) */
+  min-width: 0; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xp-numbers {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .profile-big {
   width: 55px;
   height: 55px;
   font-size: 1.9rem;
 }
 
-/* Центровка XP-блока */
-.xp-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-/* Цифры XP */
-.xp-numbers {
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-/* Настройки — не выходят за экран */
 .settings-fix {
-  margin-right: 0;
+  flex: 0 0 auto;
 }
